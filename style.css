@@ -2,55 +2,67 @@
 
 body {
   margin: 0;
-  background-color: #fafafa;
-  color: #222;
+  background-color: #f5f5f5;
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  color: #222;
 }
 
 .page {
-  max-width: 720px;
-  margin: 60px auto;
-  padding: 0 24px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* 카드 공통 스타일 */
+.card {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 24px;
-  margin-bottom: 32px;
+/* 헤더 카드 특화 */
+.header-card {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.header h1 {
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-bottom: 16px;
+}
+
+.header-card h1 {
   font-size: 2.4em;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
 .subtitle {
   color: #666;
   font-weight: 500;
-  margin-top: 4px;
 }
 
-.block {
-  margin-bottom: 36px;
-}
-
-.block h2 {
-  font-size: 1.2em;
+/* 섹션 제목 */
+.card h2 {
+  font-size: 1.3em;
   border-left: 4px solid #4c4c4c;
   padding-left: 8px;
   margin-bottom: 12px;
 }
 
+/* 프로젝트 / 리스트 항목 */
 .list-item {
   margin-bottom: 16px;
 }
 
 .list-item h3 {
-  font-size: 1.05em;
+  font-size: 1.1em;
   margin-bottom: 4px;
 }
 
