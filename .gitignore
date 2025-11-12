@@ -1,0 +1,5 @@
+secret/
+private_photos/
+*.psd
+*.zip
+.env
