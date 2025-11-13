@@ -127,12 +127,71 @@ ul {
   background-color: #e0e0e0;
 }
 
+
 /* 처음에는 카드 숨김 */
 .project-card {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  padding: 16px;
+  padding: 0 16px;
   margin-bottom: 16px;
+  pointer-events: none;
 }
+
+.project-card.open {
+  max-height: 600px; /* 카드의 최대 높이 */
+  overflow-y: auto; /* 🔥 세로 스크롤 활성화 */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* 기술 스택 */
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.95em;
+}
+
+.skill-table th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+}
+
+.skill-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skill-table tr:hover {
+  background-color: #fafafa;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.project-images img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-images img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+
