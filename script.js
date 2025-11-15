@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   // 카드 정보
   const cards = [
@@ -72,4 +71,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-</script>
