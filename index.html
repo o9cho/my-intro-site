@@ -26,12 +26,17 @@
     <!-- 소개 카드 -->
     <div class="card">
       <h2>👋 소개</h2>
-      <p>안녕하세요. 게임을 통해 새로운 경험을 만들고자 하는 <b>최지훈</b>입니다.</p>
+      <p>안녕하세요. 게임을 통해 새로운 경험을 만들고자 하는 <b>최지훈</b>입니다. 사용자가 몰입할 수 있는 것을 추구하며 항상 <b>'모든 것을 해보고자 하는 마음가짐'</b>으로 도전하여 다양한 경험을 만들고자 하고 있습니다.</p>
+    </div>
+
+    <!-- 대외 활동 카드 -->
+    <div class="card">
+      <h2>🧾 자격증</h2>
     </div>
 
 <!-- 기술 스택 카드 -->
   <div class="card">
-    <h2>🎮 기술 스택</h2>
+    <h2>🕹 기술 스택</h2>
     <div id="skill-card"></div>
   </div>
 
@@ -51,8 +56,52 @@
       });
   });
   </script>
+  
+  <!-- 수상 활동 카드 -->
+  <div id="award"></div>
 
+<!-- 수상 활동 js-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // award.html 불러오기
+  fetch("sections/award.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("award").innerHTML = html;
 
+      // 삽입된 버튼에 이벤트 등록
+      document.querySelectorAll(".show-card-button").forEach(button => {
+        button.addEventListener("click", () => {
+          const cardContainer = button.nextElementSibling;
+          const file = button.dataset.file;
+
+          // 이미 열려 있으면 닫기
+          if (cardContainer.classList.contains("open")) {
+            cardContainer.classList.remove("open");
+            setTimeout(() => cardContainer.innerHTML = "", 300);
+            return;
+          }
+
+          // 내용 불러오기
+          fetch(file)
+            .then(res => res.text())
+            .then(data => {
+              cardContainer.innerHTML = data;
+              cardContainer.classList.add("open");
+            })
+            .catch(err => {
+              cardContainer.innerHTML = "<p style='color:red;'>불러오기에 실패했습니다 😢</p>";
+              cardContainer.classList.add("open");
+            });
+        });
+      });
+    })
+    .catch(err => console.error("award.html 불러오기 실패:", err));
+});
+</script>
+
+    <!-- 대외 활동 카드 -->
+    <div id="card"></div>
 
     <!-- 프로젝트 경험 카드 -->
     <div class="card">
@@ -68,14 +117,38 @@
       </button>
       <div class="project-card"></div>
 
-      <button class="show-card-button" data-file="projects/vrchat.html">
-        VRChat 카드 선택 시스템
+      <!-- HTML 추가 -->
+      <button class="show-card-button" data-file="projects/VRCHATGameWorld.html">
+        메타버스 게임 월드 제작
       </button>
       <div class="project-card"></div>
+
+      <button class="show-card-button" data-file="projects/GCUGameJam.html">
+        가천대학교 게임영상학과 2024 게임잼 (2024) | 프로젝트 평가 1위
+      </button>
+      <div class="project-card"></div>
+      
+      <button class="show-card-button" data-file="projects/TelegramWebGLGame.html">
+        텔레그램 BOT 게임 [슈팅도넛] 개발 (2024)
+      </button>
+      <div class="project-card"></div>
+
+      <button class="show-card-button" data-file="projects/VRCHATGameWorld2025.html">
+        VR 콘텐츠 월드 [너에 대해서 알고 싶어] (2025)
+      </button>
+      <div class="project-card"></div>
+      
+      <!-- 추가 가능 -->
     </div>
 
+    <!-- 기타활동 -->
+    <div id="other"></div>
+
+    <!-- 군 경력 -->
+    <div id="military"></div>
   </div>
 
   <script src="script.js"></script>
+  <script src="include.js"></script>
 </body>
 </html>
