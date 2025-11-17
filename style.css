@@ -1,16 +1,17 @@
-/* Pretendard 폰트 선언 */
+/* PretendardVariable 폰트 선언 */
 @font-face {
   font-family: 'Pretendard';
-  src: url('/my-intro-site/font/Pretendard-Medium.otf') format('opentype');
-  font-weight: 500;
+  src: url('./font/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 100 900; /* Variable 폰트 범위 지정 */
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* 깃허브 로딩 느림 방지 */
 }
 
-body {
+/* 기본 폰트 강제 적용 */
+body, html {
+  font-family: 'Pretendard', sans-serif !important;
   margin: 0;
   background-color: #f5f5f5;
-  font-family: 'Pretendard', sans-serif;
   color: #222;
 }
 
