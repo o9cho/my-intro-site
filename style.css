@@ -1,7 +1,7 @@
 /* Pretendard 폰트 선언 */
 @font-face {
   font-family: 'Pretendard';
-  src: url('/my-intro-site/font/Pretendard-Medium.oft') format('woff2');
+  src: url('/my-intro-site/font/Pretendard-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
