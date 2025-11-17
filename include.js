@@ -4,7 +4,7 @@ async function loadSection(id, file) {
   document.getElementById(id).innerHTML = html;
 }
 
-loadSection("award", "/sections/award.html");
-loadSection("activities", "/sections/activities.html");
-loadSection("other", "/sections/other.html");
-loadSection("military", "/sections/military.html");
+loadSection("award", "sections/award.html");
+loadSection("activities", "sections/activities.html");
+loadSection("other", "sections/other.html");
+loadSection("military", "sections/military.html");
